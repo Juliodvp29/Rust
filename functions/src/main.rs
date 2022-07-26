@@ -1,4 +1,4 @@
-fn main() {
+fn main(){
     let y = {
         let x = 3;
         x + 1
@@ -6,7 +6,7 @@ fn main() {
 
     println!("The value of y is: {y}");
 
-    another_function();
+    // another_function();
     function_with_parameters(5, 2);
     greet_user("Juan");
     let five = five();
@@ -15,9 +15,9 @@ fn main() {
     println!("The value of add_two is: {}", add_two);
 }
 
-fn another_function(){
-    println!("Another function.");
-}
+// fn another_function(){
+//     println!("Another function.");
+// }
 
 fn function_with_parameters(x: i32, y: i32){
     println!("The value of x is: {x}");
