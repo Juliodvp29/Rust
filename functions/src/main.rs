@@ -13,6 +13,7 @@ fn main(){
     let add_two = add_two(2);
     println!("The value of five is: {}", five);
     println!("The value of add_two is: {}", add_two);
+    hello("Jose");
 }
 
 // fn another_function(){
@@ -36,3 +37,6 @@ fn add_two(x: i32) -> i32 {
     x + 2
 }
 
+fn hello(n: &str) {
+    println!("Hello, {}!", n);
+}

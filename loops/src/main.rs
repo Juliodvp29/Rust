@@ -63,4 +63,9 @@ fn main() {
         println!("{number}!");
     }
     println!("LIFTOFF!!!");
+
+    let list_names = ["Juan", "Jose", "Pedro", "Jorge", "Tatiana"];
+    for name in list_names.iter(){
+        println!("{}", name);
+    }
 }

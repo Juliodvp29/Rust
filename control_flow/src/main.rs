@@ -19,4 +19,19 @@ fn main() {
     let condition = false;
     let number3 = if condition {5} else {6};
     println!("The value of number3 is: {}", number3);
+
+    if 2 >= 1 {
+        println!("2 is greater than or equal to 1");
+    }
+
+    if "hello" == "world" {
+        println!("hello is equal to world");
+    }else if "hello" == "hello" {
+        println!("hello is equal to hello");
+        
+    }
+
+    let condition2 = false;
+    let number4 = if condition2 {5} else {6};
+    println!("The value of number4 is: {}", number4);
 }
