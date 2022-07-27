@@ -48,7 +48,7 @@ fn main() {
     println!("Liftoff!");
 
     let a = [10, 20, 30, 40, 50];
-    let mut index = 0;
+    let mut _index = 0;
 
     // while index < 5 {
     //     println!("the value is: {}", a[index]);
