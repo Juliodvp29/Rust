@@ -69,7 +69,7 @@ fn largest(list: &[i32]) -> i32 {
 fn sum_pairs(list1: &[i32], list2: &[i32]) -> Vec<i32> {
     let mut result: Vec<i32> = Vec::new();
     for i in 0..list1.len() {
-        if(list1[i] % 2 == 0 || list2[i] % 2 == 0) {
+        if list1[i] % 2 == 0 || list2[i] % 2 == 0 {
             result.push(list1[i] + list2[i]);
         }
     }
