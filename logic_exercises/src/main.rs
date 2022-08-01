@@ -6,7 +6,6 @@ fn main() {
     largest(&[1,2,3,4,5,6,7,8,9,10]);
     sum_pairs(&[1,2,3,4,5,6,7,8,9,10], &[1,2,3,4,5,6,7,8,9,10]);
     factorial(5);
-
 }
 
 //1. fibonacci recursive
@@ -87,3 +86,6 @@ fn factorial(n: u32) -> u32 {
         n * factorial(n - 1)
     }
 }
+
+
+
