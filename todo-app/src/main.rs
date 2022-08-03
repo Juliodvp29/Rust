@@ -1,8 +1,10 @@
 use std::{
     io,
-    io::{BufRead}
+    io::{BufRead, Error, Read}, 
+    fs::OpenOptions
 };
 
+#[derive(Debug)]
 struct Todo {
     task: String,
     done: bool
@@ -14,6 +16,9 @@ impl Todo {
     }
 }
 fn main() {
+
+    let _todo: Vec<Todo> = all_todo().expect("error getting tasks");
+    print!("Todo: {:?} ", _todo);
 
     loop {
         
@@ -32,7 +37,7 @@ fn main() {
 
         match action.as_ref() {
             "show" => print!("show task"),
-            "create" => create_todo(),
+            "create" => create_todo(task, false),
             "complete" => print!("complete task"),
             "delete" => print!("delete task"),
             _ => print!("unknown action")
@@ -42,8 +47,27 @@ fn main() {
     }
 }
 
-fn create_todo(){
+fn create_todo(task: String, done: bool){
     let new_todo = Todo::create("Read a book".to_string(), false);
     println!("Hello, world! {} - {} ", new_todo.task, new_todo.done);
-
 }
+
+fn all_todo() -> Result<Vec<Todo>, Error> {
+    let mut file = OpenOptions::new()
+    .write(true)
+    .create(true)
+    .read(true)
+    .open("todo.txt")
+    .expect("Error!");
+
+    let mut body = String::new();
+    file.read_to_string(&mut body).expect("could not read the file");
+    let mut list: Vec<Todo> = Vec::new();
+
+    for line in body.lines() {
+        let task = line.split(':').collect::<Vec<&str>>();
+        list.push(Todo::create(task[0].to_string(), task[1].parse().unwrap()));
+    }
+    Ok(list)
+}
+

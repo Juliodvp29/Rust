@@ -1,0 +1,3 @@
+eat pizza:false
+play cod:false
+go to the beach:true
