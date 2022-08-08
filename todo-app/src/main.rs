@@ -47,7 +47,7 @@ fn main() {
     }
 }
 
-fn create_todo(task: String, done: bool){
+fn create_todo(_task: String,_donee: bool){
     let new_todo = Todo::create("Read a book".to_string(), false);
     println!("Hello, world! {} - {} ", new_todo.task, new_todo.done);
 }
