@@ -33,6 +33,9 @@ fn main(){
     let spaces = spaces.len();
     println!("The value of spaces is: {spaces}");
 
+    let f = "Hello world!";
+    println!("Message: {f}");
+
 }
 
 // const THREE_HOURS_IN_SECONDS: u32 = 3 * 60 * 60;
